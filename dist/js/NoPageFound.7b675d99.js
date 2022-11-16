@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunksitur"]=self["webpackChunksitur"]||[]).push([[488],{2067:function(n,r,u){u.r(r),u.d(r,{default:function(){return s}});var t=u(3396);function e(n,r){return(0,t.wg)(),(0,t.iD)("h1",null,"Página no encontrada")}var a=u(89);const c={},i=(0,a.Z)(c,[["render",e]]);var s=i}}]);
+//# sourceMappingURL=NoPageFound.7b675d99.js.map
