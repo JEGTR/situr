@@ -1,15 +1,45 @@
 <template>
-    <div id="map" />
+    <main>
+        <div class="container-fluid">
+            <div class="row g-0">
+                <div class="col-8">
+                    <div id="map" />
+                </div>
+                <div class="col-4 ">
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div v-for="place in places" class="accordion-item">
+                            <h2 class="accordion-header" :id="`panelsStayOpen-heading${place.properties.url}`">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#panelsStayOpen-collapse${place.properties.url}`" aria-expanded="true" :aria-controls="`panelsStayOpen-collapse${place.properties.url}`">
+                                {{ place.properties.title}}
+                            </button>
+                            </h2>
+                            <div :id="`panelsStayOpen-collapse${place.properties.url}`" class="accordion-collapse collapse" :aria-labelledby="`panelsStayOpen-heading${place.properties.url}`">
+                                <div class="accordion-body">
+                                    <img :src="require('@/assets/' + place.properties.image)" class="card-img-top" alt="Imagen de wirestock en Freepik">
+                                    <p>{{ place.properties.description }}</p>
+                                    <p> <router-link :to="`/lugares/${place.properties.url}`" class="btn btn-secondary">Ver más</router-link></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </main>
 </template>
 
 
 <script>
 import mapboxgl from "mapbox-gl";
 
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 
 export default {
+
   setup() {
+    const places = ref();
     onMounted(() => {
         console.log("Initilizing map")
         const map = new mapboxgl.Map({
@@ -30,7 +60,9 @@ export default {
                 },
                 'properties': {
                     'title': 'Pereira',
-                    'description': 'Descripción'
+                    'description': 'Descripción',
+                    'image': 'mountain.jpeg',
+                    'url':'pereira'
                 }
                 },
                 {
@@ -41,7 +73,9 @@ export default {
                     },
                     'properties': {
                         'title': 'Apía',
-                        'description': 'Descripción'
+                        'description': 'Descripción',
+                        'image': 'mountain.jpeg',
+                        'url':'apia'
                     }
                 },
                 {
@@ -52,7 +86,9 @@ export default {
                     },
                     'properties': {
                         'title': 'Balboa',
-                        'description': 'Descripción'
+                        'description': 'Descripción',
+                        'image': 'mountain.jpeg',
+                        'url':'balboa'
                     }
                 },
                 {
@@ -63,7 +99,9 @@ export default {
                     },
                     'properties': {
                         'title': 'Belén de Umbría',
-                        'description': 'Descripción'
+                        'description': 'Descripción',
+                        'image': 'mountain.jpeg',
+                        'url':'belen-de-umbria'
                     }
                 },
                 {
@@ -74,7 +112,9 @@ export default {
                     },
                     'properties': {
                         'title': 'Dosquebradas',
-                        'description': 'Descripción'
+                        'description': 'Descripción',
+                        'image': 'mountain.jpeg',
+                        'url':'dosquebradas'
                     }
                 },
                 {
@@ -85,7 +125,9 @@ export default {
                     },
                     'properties': {
                         'title': 'Guática',
-                        'description': 'Descripción'
+                        'description': 'Descripción',
+                        'image': 'mountain.jpeg',
+                        'url':'guatica'
                     }
                 },
                 {
@@ -96,7 +138,9 @@ export default {
                     },
                     'properties': {
                         'title': 'La Celia',
-                        'description': 'Descripción'
+                        'description': 'Descripción',
+                        'image': 'mountain.jpeg',
+                        'url':'la-celia'
                     }
                 },
                 {
@@ -107,7 +151,9 @@ export default {
                     },
                     'properties': {
                         'title': 'La Virginia',
-                        'description': 'Descripción'
+                        'description': 'Descripción',
+                        'image': 'mountain.jpeg',
+                        'url':'la-virginia'
                     }
                 },
                 {
@@ -118,7 +164,9 @@ export default {
                     },
                     'properties': {
                         'title': 'Marsella',
-                        'description': 'Descripción'
+                        'description': 'Descripción',
+                        'image': 'mountain.jpeg',
+                        'url':'marsella'
                     }
                 },
                 {
@@ -129,7 +177,9 @@ export default {
                     },
                     'properties': {
                         'title': 'Mistrató',
-                        'description': 'Descripción'
+                        'description': 'Descripción',
+                        'image': 'mountain.jpeg',
+                        'url':'mistrato'
                     }
                 },
                 {
@@ -140,7 +190,9 @@ export default {
                     },
                     'properties': {
                         'title': 'Pueblo Rico',
-                        'description': 'Descripción'
+                        'description': 'Descripción',
+                        'image': 'mountain.jpeg',
+                        'url':'pueblo-rico'
                     }
                 },
                 {
@@ -151,7 +203,9 @@ export default {
                     },
                     'properties': {
                         'title': 'Quinchía',
-                        'description': 'Descripción'
+                        'description': 'Descripción',
+                        'image': 'mountain.jpeg',
+                        'url':'quinchia'
                     }
                 },
                 {
@@ -162,7 +216,9 @@ export default {
                     },
                     'properties': {
                         'title': 'Santa Rosa de Cabal',
-                        'description': 'Descripción'
+                        'description': 'Descripción',
+                        'image': 'mountain.jpeg',
+                        'url':'santa-rosa-de-cabal'
                     }
                 },
                 {
@@ -173,30 +229,51 @@ export default {
                     },
                     'properties': {
                         'title': 'Santuario',
-                        'description': 'Descripción'
+                        'description': 'Descripción',
+                        'image': 'mountain.jpeg',
+                        'url':'santuario'
                     }
                 }
             ]
         };
-        for (const feature of geojson.features) {
 
-            const myLocationMarker = new mapboxgl.Marker()
-                .setLngLat( feature.geometry.coordinates )
-                .setPopup( new mapboxgl.Popup()
-                    .setHTML(`
+        places.value = geojson.features
+
+        // disable map rotation using right click + drag
+        map.dragRotate.disable();
+        
+        // disable map rotation using touch rotation gesture
+        map.touchZoomRotate.disableRotation();
+
+
+        map.on('load', () => {
+            map.addSource('municipios-risaralda', {
+                type: 'geojson',
+                data: geojson 
+            })
+
+            map.addLayer({
+                id: "places",
+                type: "symbol",
+                source: "municipios-risaralda",
+            })
+            
+            geojson.features.forEach(function(feature){
+                const popUp = new mapboxgl.Popup()
+                .setHTML(`
                     <h3>${feature.properties.title}</h3>
                     <p>${feature.properties.description}</p>
-                    `) )
-                .addTo( map );
-        }
+                    `)
+                .addTo(map);
 
-
-      map.on('load', () => {
-      // TODO: Here we want to load a layer
-      // TODO: Here we want to load/setup the popup
-      });
+                const myLocationMarker = new mapboxgl.Marker()
+                    .setLngLat( feature.geometry.coordinates )
+                    .setPopup( popUp )
+                    .addTo( map );
+                })
+            });
     });
-    return {};
+    return { places };
   },
 };
 </script>
