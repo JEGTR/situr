@@ -7,17 +7,17 @@
                 </div>
                 <div class="col-4 ">
                     <div class="accordion" id="accordionPanelsStayOpenExample">
-                        <div v-for="place in places" class="accordion-item">
-                            <h2 class="accordion-header" :id="`panelsStayOpen-heading${place.properties.url}`">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#panelsStayOpen-collapse${place.properties.url}`" aria-expanded="true" :aria-controls="`panelsStayOpen-collapse${place.properties.url}`">
+                        <div v-for="place in places" :key="place.properties.id" class="accordion-item">
+                            <h2 class="accordion-header" :id="`panelsStayOpen-heading${place.properties.id}`">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#panelsStayOpen-collapse${place.properties.id}`" aria-expanded="true" :aria-controls="`panelsStayOpen-collapse${place.properties.id}`">
                                 {{ place.properties.title}}
                             </button>
                             </h2>
-                            <div :id="`panelsStayOpen-collapse${place.properties.url}`" class="accordion-collapse collapse" :aria-labelledby="`panelsStayOpen-heading${place.properties.url}`">
+                            <div :id="`panelsStayOpen-collapse${place.properties.id}`" class="accordion-collapse collapse" :aria-labelledby="`panelsStayOpen-heading${place.properties.id}`">
                                 <div class="accordion-body">
                                     <img :src="require('@/assets/' + place.properties.image)" class="card-img-top" alt="Imagen de wirestock en Freepik">
                                     <p>{{ place.properties.description }}</p>
-                                    <p> <router-link :to="`/lugares/${place.properties.url}`" class="btn btn-secondary">Ver más</router-link></p>
+                                    <p> <router-link :to="{name: 'place-id', params: {id: place.properties.id}}" class="btn btn-secondary">Ver más</router-link></p>
                                 </div>
                             </div>
                         </div>
@@ -61,8 +61,8 @@ export default {
                 'properties': {
                     'title': 'Pereira',
                     'description': 'Descripción',
-                    'image': 'mountain.jpeg',
-                    'url':'pereira'
+                    'image': 'pereira.jpeg',
+                    'id':'pereira'
                 }
                 },
                 {
@@ -75,7 +75,7 @@ export default {
                         'title': 'Apía',
                         'description': 'Descripción',
                         'image': 'mountain.jpeg',
-                        'url':'apia'
+                        'id':'apia'
                     }
                 },
                 {
@@ -88,7 +88,7 @@ export default {
                         'title': 'Balboa',
                         'description': 'Descripción',
                         'image': 'mountain.jpeg',
-                        'url':'balboa'
+                        'id':'balboa'
                     }
                 },
                 {
@@ -101,7 +101,7 @@ export default {
                         'title': 'Belén de Umbría',
                         'description': 'Descripción',
                         'image': 'mountain.jpeg',
-                        'url':'belen-de-umbria'
+                        'id':'belen-de-umbria'
                     }
                 },
                 {
@@ -114,7 +114,7 @@ export default {
                         'title': 'Dosquebradas',
                         'description': 'Descripción',
                         'image': 'mountain.jpeg',
-                        'url':'dosquebradas'
+                        'id':'dosquebradas'
                     }
                 },
                 {
@@ -127,7 +127,7 @@ export default {
                         'title': 'Guática',
                         'description': 'Descripción',
                         'image': 'mountain.jpeg',
-                        'url':'guatica'
+                        'id':'guatica'
                     }
                 },
                 {
@@ -140,7 +140,7 @@ export default {
                         'title': 'La Celia',
                         'description': 'Descripción',
                         'image': 'mountain.jpeg',
-                        'url':'la-celia'
+                        'id':'la-celia'
                     }
                 },
                 {
@@ -153,7 +153,7 @@ export default {
                         'title': 'La Virginia',
                         'description': 'Descripción',
                         'image': 'mountain.jpeg',
-                        'url':'la-virginia'
+                        'id':'la-virginia'
                     }
                 },
                 {
@@ -166,7 +166,7 @@ export default {
                         'title': 'Marsella',
                         'description': 'Descripción',
                         'image': 'mountain.jpeg',
-                        'url':'marsella'
+                        'id':'marsella'
                     }
                 },
                 {
@@ -179,7 +179,7 @@ export default {
                         'title': 'Mistrató',
                         'description': 'Descripción',
                         'image': 'mountain.jpeg',
-                        'url':'mistrato'
+                        'id':'mistrato'
                     }
                 },
                 {
@@ -192,7 +192,7 @@ export default {
                         'title': 'Pueblo Rico',
                         'description': 'Descripción',
                         'image': 'mountain.jpeg',
-                        'url':'pueblo-rico'
+                        'id':'pueblo-rico'
                     }
                 },
                 {
@@ -205,7 +205,7 @@ export default {
                         'title': 'Quinchía',
                         'description': 'Descripción',
                         'image': 'mountain.jpeg',
-                        'url':'quinchia'
+                        'id':'quinchia'
                     }
                 },
                 {
@@ -218,7 +218,7 @@ export default {
                         'title': 'Santa Rosa de Cabal',
                         'description': 'Descripción',
                         'image': 'mountain.jpeg',
-                        'url':'santa-rosa-de-cabal'
+                        'id':'santa-rosa-de-cabal'
                     }
                 },
                 {
@@ -231,7 +231,7 @@ export default {
                         'title': 'Santuario',
                         'description': 'Descripción',
                         'image': 'mountain.jpeg',
-                        'url':'santuario'
+                        'id':'santuario'
                     }
                 }
             ]
