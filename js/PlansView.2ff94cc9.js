@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunksitur"]=self["webpackChunksitur"]||[]).push([[547],{3752:function(n,r,s){s.r(r),s.d(r,{default:function(){return d}});var u=s(3396);const c={id:"plans",class:"row gy-5"},t=(0,u._)("div",{class:"col"},[(0,u._)("h2",null,"¿Qué Hacer?"),(0,u._)("p")],-1),e=[t];function a(n,r){return(0,u.wg)(),(0,u.iD)("div",c,e)}var i=s(89);const l={},o=(0,i.Z)(l,[["render",a]]);var d=o}}]);
+//# sourceMappingURL=PlansView.2ff94cc9.js.map

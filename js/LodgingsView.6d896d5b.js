@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunksitur"]=self["webpackChunksitur"]||[]).push([[872],{1975:function(n,r,s){s.r(r),s.d(r,{default:function(){return d}});var u=s(3396);const i={id:"lodgings",class:"row gy-5"},t=(0,u._)("div",{class:"col"},[(0,u._)("h2",null,"¿Dónde Dormir?"),(0,u._)("p")],-1),c=[t];function e(n,r){return(0,u.wg)(),(0,u.iD)("div",i,c)}var l=s(89);const o={},a=(0,l.Z)(o,[["render",e]]);var d=a}}]);
+//# sourceMappingURL=LodgingsView.6d896d5b.js.map

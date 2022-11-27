@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunksitur"]=self["webpackChunksitur"]||[]).push([[384],{4964:function(r,n,s){s.r(n),s.d(n,{default:function(){return d}});var u=s(3396);const t={id:"foods",class:"row gy-5"},c=(0,u._)("div",{class:"col"},[(0,u._)("h2",null,"¿Qué Comer?"),(0,u._)("p")],-1),e=[c];function i(r,n){return(0,u.wg)(),(0,u.iD)("div",t,e)}var o=s(89);const a={},l=(0,o.Z)(a,[["render",i]]);var d=l}}]);
+//# sourceMappingURL=FoodsView.ad1ab3ff.js.map
